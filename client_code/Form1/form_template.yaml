@@ -29,6 +29,7 @@ components:
     properties: {text: Classify, role: filled-button, icon: 'fa:code'}
     type: Button
     layout_properties: {grid_position: 'AIWUAZ,PXBNIN'}
+    event_bindings: {click: button_1_click}
   - name: species_label
     properties: {align: center, role: headline}
     type: Label
