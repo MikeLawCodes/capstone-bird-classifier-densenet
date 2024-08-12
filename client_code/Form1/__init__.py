@@ -5,15 +5,35 @@ import anvil.server
 
 class Form1(Form1Template):
   def __init__(self, **properties):
-    # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
-    # Any code you write here will run before the form opens.
-
+    #TODO Update this URL with the Final Draft of the notebook
+    self.link_1.url = "https://colab.research.google.com/drive/1t-kpKhJdKRCzBbE_EIG_n9aHuvdX5v3Z?usp=sharing"
+    self.link_1.target = "_blank"
+  
+  def file_loader_1_change(self, file, **event_args):
+    # Display the uploaded image in the Image component
+    self.uploaded_image.source = file
   def classify_button_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    categorize_bird = anvil.server.call('cateforize_input')
+    if self.file_loader_1.file is None:
+      self.result_label.text = "Please upload an image first."
+      return
+    try:
+      result = anvil.server.call('classify_image', self.file_loader_1.file)
+      self.result_label.text = f"This bird is classified as: {result}"
+    except Exception as e:
+      self.result_label.text = f"Error: {str(e)}"
 
-  def link_1_click(self, **event_args):
-    """This method is called when the link is clicked"""
-    pass
+@anvil.server.callable
+def classify_image(image):
+    # Send the image file to the Colab notebook
+    response = anvil.http.request(
+        url="https://your-colab-endpoint.com/classify",
+        method="POST",
+        files={'file': image},
+        json=True
+    )
+    
+    # Extract the classification result from the response
+    result = response.get('result', 'No result returned')
+    return result
