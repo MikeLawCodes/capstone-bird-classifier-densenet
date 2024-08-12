@@ -39,7 +39,7 @@ components:
     properties: {text: Link to Project's Colab Notebook, icon: 'fa:google', tooltip: Take me to Mike Lawrence's Google Colab Project, font_size: null, italic: false, underline: false, role: body}
     type: Link
     layout_properties: {}
-    event_bindings: {}
+    event_bindings: {click: link_1_click}
 - name: label_2
   properties: {text: The International Birder Bird Classifier, bold: false, visible: true, role: headline, icon_align: left}
   type: Label

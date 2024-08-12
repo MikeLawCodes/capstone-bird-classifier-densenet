@@ -12,3 +12,7 @@ class Form1(Form1Template):
   def classify_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     categorize_bird = anvil.server.call('cateforize_input')
+
+  def link_1_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    pass
