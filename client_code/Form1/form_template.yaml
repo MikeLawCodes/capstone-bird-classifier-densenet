@@ -20,7 +20,7 @@ components:
     - name: file_loader_1
       properties: {text: Upload Image, icon_align: left, role: filled-button, tooltip: Upload an image of a bird}
       type: FileLoader
-      layout_properties: {grid_position: 'CTMZCI,GXJQIM'}
+      layout_properties: {grid_position: 'CTMZCI,GXJQIM', full_width_row: false, row_background: ''}
   - name: classify_button
     properties: {text: Classify, role: filled-button, icon: 'fa:eye'}
     type: Button
