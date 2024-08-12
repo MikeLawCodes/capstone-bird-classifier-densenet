@@ -1,7 +1,7 @@
 is_package: true
 container:
   type: HtmlTemplate
-  properties: {html: '@theme:standard-page.html', role: null, background: ''}
+  properties: {html: '@theme:standard-page.html', role: null, background: '', visible: true}
 components:
 - type: ColumnPanel
   properties: {col_widths: '{}'}
@@ -17,16 +17,12 @@ components:
     type: ColumnPanel
     layout_properties: {grid_position: 'ZEQEPM,ZRSNKV'}
     components:
-    - name: label_1
-      properties: {text: Upload Image, icon: 'fa:upload', role: title, align: right}
-      type: Label
-      layout_properties: {grid_position: 'CTMZCI,BNAJZZ'}
     - name: file_loader_1
-      properties: {text: '', icon_align: left}
+      properties: {text: Upload Image, icon_align: left, role: filled-button}
       type: FileLoader
       layout_properties: {grid_position: 'CTMZCI,GXJQIM'}
   - name: button_1
-    properties: {text: Classify, role: filled-button, icon: 'fa:code'}
+    properties: {text: Classify, role: filled-button, icon: 'fa:eye'}
     type: Button
     layout_properties: {grid_position: 'AIWUAZ,PXBNIN'}
     event_bindings: {click: button_1_click}
@@ -40,12 +36,12 @@ components:
   layout_properties: {slot: nav-right}
   components:
   - name: link_1
-    properties: {text: Link to Project's Colab Notebook, icon: 'fa:google', tooltip: Take me to Mike Lawrence's Google Colab Project, font_size: null, italic: false, underline: false}
+    properties: {text: Link to Project's Colab Notebook, icon: 'fa:google', tooltip: Take me to Mike Lawrence's Google Colab Project, font_size: null, italic: false, underline: false, role: body}
     type: Link
     layout_properties: {}
     event_bindings: {}
 - name: label_2
-  properties: {text: The International Birder Bird Classifier, bold: false, visible: true, role: title, icon_align: left}
+  properties: {text: The International Birder Bird Classifier, bold: false, visible: true, role: headline, icon_align: left}
   type: Label
   layout_properties: {slot: title}
   data_bindings: []
