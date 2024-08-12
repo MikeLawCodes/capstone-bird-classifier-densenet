@@ -14,3 +14,4 @@ services:
   client_config: {}
   server_config: {}
 metadata: {title: MLaw Capstone Bird Classifier, description: 'Bird classification application using a convolutional neural network, Python, Tensorflow,  and Keras', logo_img: 'asset:Shoebill_funny-2292362979.jpg'}
+uplink_visible: true
