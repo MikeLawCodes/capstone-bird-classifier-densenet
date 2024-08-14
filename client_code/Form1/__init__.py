@@ -21,8 +21,8 @@ class Form1(Form1Template):
     except Exception as e:
       self.result_label.text = f"Error: {str(e)}"
 
-  def file_loader_1_change(self, file, **event_args):
-    if self.file_loader_1.file is None:
+  def file_loader_1_change(self, **event_args):
+    if self.file_loader_1 is None:
       return
-    if self.file_loader_1.file is not None:
+    if self.file_loader_1 is not None:
       self.uploaded_image.source = self.file_loader_1.file
