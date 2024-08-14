@@ -9,7 +9,7 @@ components:
   layout_properties: {slot: default}
   components:
   - name: image_1
-    properties: {source: _/theme/tucan.jpg, height: 426}
+    properties: {source: _/theme/tucan_banner.jpg, height: 426}
     type: Image
     layout_properties: {grid_position: 'GRLUGZ,LFPZWM'}
   - name: outlined_card_1
