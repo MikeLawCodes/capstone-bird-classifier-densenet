@@ -10,7 +10,6 @@ class Form1(Form1Template):
     self.link_1.url = "https://colab.research.google.com/drive/1CJADWy5EGjXv58CXN8yEWTxCBVRIa6DB?usp=sharing"
     self.link_1.target = "_blank"
 
-    self.uploaded_image.source = self.file_loader_1.file
   def classify_button_click(self, **event_args):
     if self.file_loader_1.file is None:
       self.result_label.text = "Please upload an image first."
@@ -23,6 +22,7 @@ class Form1(Form1Template):
       self.result_label.text = f"Error: {str(e)}"
 
   def file_loader_1_change(self, file, **event_args):
-    self.uploaded_image.source = self.file_loader_1.file
-
-    
+    if self.file_loader_1.file is None:
+      return
+    if self.file_loader_1.file is not None:
+      self.uploaded_image.source = self.file_loader_1.file
