@@ -9,31 +9,38 @@ components:
   layout_properties: {slot: default}
   components:
   - name: image_1
-    properties: {source: _/theme/tucan_banner.jpg, height: 426}
+    properties: {source: _/theme/tucan_banner.jpg, height: 279}
     type: Image
     layout_properties: {grid_position: 'GRLUGZ,LFPZWM'}
   - name: outlined_card_1
-    properties: {role: outlined-card}
+    properties: {role: outlined-card, visible: true}
     type: ColumnPanel
     layout_properties: {grid_position: 'ZEQEPM,ZRSNKV'}
     components:
     - name: file_loader_1
       properties: {text: Upload Image, icon_align: left, role: filled-button, tooltip: Upload an image of a bird}
       type: FileLoader
-      layout_properties: {grid_position: 'CTMZCI,GXJQIM', full_width_row: false, row_background: ''}
+      layout_properties: {grid_position: 'CIIAIO,HVEFQA', full_width_row: false, row_background: ''}
+      event_bindings: {change: file_loader_1_change}
+    - name: classify_button
+      properties: {text: Classify, role: filled-button, icon: 'fa:eye', bold: true}
+      type: Button
+      layout_properties: {grid_position: 'CIIAIO,VKIJUD'}
+      event_bindings: {click: classify_button_click}
     - name: uploaded_image
       properties: {}
       type: Image
-      layout_properties: {grid_position: 'XGOKYI,FZYBGH'}
-  - name: classify_button
-    properties: {text: Classify, role: filled-button, icon: 'fa:eye', bold: true}
-    type: Button
-    layout_properties: {grid_position: 'AIWUAZ,PXBNIN', full_width_row: true, row_background: ''}
-    event_bindings: {click: classify_button_click}
-  - name: result_label
-    properties: {align: center, role: headline}
-    type: Label
-    layout_properties: {grid_position: 'VHWDCZ,JIHXQW'}
+      layout_properties: {grid_position: 'FBITGJ,MIYCRR'}
+      event_bindings: {show: file_loader_1_change}
+  - name: outlined_card_2
+    properties: {role: outlined-card}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'PPWXZC,CNACIL'}
+    components:
+    - name: result_label
+      properties: {align: center, role: headline}
+      type: Label
+      layout_properties: {grid_position: 'OLTIJG,CRJWPI'}
 - type: FlowPanel
   properties: {}
   name: navbar_links
