@@ -24,15 +24,13 @@ class Form1(Form1Template):
     except Exception as e:
       self.result_label.text = f"Error: {str(e)}"
 
-@anvil.server.callable
-def classify_image(image):
-    # Send the image file to the Colab notebook
-    response = anvil.http.request(
-        url="https://your-colab-endpoint.com/classify",
-        method="POST",
-        files={'file': image},
-        json=True
-    )
+# def classify(image):
+#     response = anvil.http.request(
+#         url="https://colab.research.google.com/drive/1CJADWy5EGjXv58CXN8yEWTxCBVRIa6DB#scrollTo=Me_KGv37H7zl&line=1&uniqifier=1",
+#         method="POST",
+#         files={'file': image},
+#         json=True
+#     )
     
     # Extract the classification result from the response
     result = response.get('result', 'No result returned')
